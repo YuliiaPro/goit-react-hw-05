@@ -1,0 +1,12 @@
+.container{
+    margin-top: 60px;
+
+}
+
+.add {
+    margin: 10px;
+}
+.list{
+    margin-left: 20px;
+    list-style-type: none;
+}
