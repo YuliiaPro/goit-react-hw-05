@@ -9,11 +9,11 @@ import css from "./MoviesPage.module.css";
 
 export default function MoviesPage() {
   const [videos, setVideos] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
 
+  const searchQuery = searchParams.get("movie");
   useEffect(() => {
     if (!searchQuery) return;
 
@@ -33,8 +33,6 @@ export default function MoviesPage() {
   }, [searchQuery]);
 
   const handleSubmit = async (topic) => {
-    searchParams.get("movie") ?? "";
-    setSearchQuery(topic);
     searchParams.set("movie", topic);
     setSearchParams(searchParams);
   };
